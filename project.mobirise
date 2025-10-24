@@ -1,0 +1,785 @@
+{
+  "settings": {
+    "name": "Ada Nar",
+    "currentPage": "html.html",
+    "theme": {
+      "name": "startm5",
+      "title": "StartM5",
+      "styling": {
+        "primaryColor": "#2b7a69",
+        "secondaryColor": "#ffd7ef",
+        "successColor": "#3a341c",
+        "infoColor": "#320707",
+        "warningColor": "#a0e2e1",
+        "dangerColor": "#ffffff",
+        "mainFont": "Inter Tight",
+        "display1Font": "Inter Tight",
+        "display1Size": 5,
+        "display2Font": "Inter Tight",
+        "display2Size": 4,
+        "display5Font": "Inter Tight",
+        "display5Size": 2,
+        "display7Font": "Inter Tight",
+        "display7Size": 1.4,
+        "display4Font": "Inter Tight",
+        "display4Size": "1.4",
+        "isRoundedImages": true,
+        "isRoundedButtons": true,
+        "isLargeButtons": true,
+        "isGhostButtonBorder": true,
+        "underlinedLinks": true,
+        "isAnimatedOnScroll": true,
+        "isScrollToTopButton": true
+      },
+      "additionalSetColors": [
+        "#ffa25b",
+        "#2b7a69",
+        "#164fd3",
+        "#ff7d19",
+        "#385493",
+        "#086784",
+        "#fe8d01"
+      ]
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "5.8.25",
+    "siteFonts": [
+      {
+        "css": "'Inter Tight', sans-serif",
+        "name": "Inter Tight",
+        "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
+      }
+    ],
+    "uniqCompNum": 108,
+    "versionPublish": "6.1.4",
+    "imageResize": true,
+    "chatbutton": {},
+    "favicon": false,
+    "mbrsiteDomain": "4ehcmqnrfp",
+    "usedWebp": false,
+    "cssOptimize": false,
+    "lazyLoad": false,
+    "robotsSwitcher": false,
+    "sitemapSwitcher": false,
+    "sitemapSwitcherAuto": false,
+    "siteUrl": false,
+    "cookiesAlert": false,
+    "gdpr": false,
+    "pwa-switcher": false,
+    "screenshot": "screenshot.png",
+    "publishChangesOnly": true
+  },
+  "pages": {
+    "B.html": {
+      "settings": {
+        "title": "Page 1",
+        "order": "4"
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".image-wrapper": {
+                "flex-direction": "column",
+                "img": {
+                  "margin": "auto",
+                  "margin-bottom": "1rem"
+                }
+              }
+            },
+            ".card-box": {
+              "max-width": "750px",
+              "padding-top": "2rem",
+              "margin-left": "auto",
+              "margin-right": "0"
+            },
+            "img, .item-img": {
+              "width": "100%",
+              "& when (@autoSize)": {
+                "height": "(@imageHeight * 100px)",
+                "object-fit": "cover"
+              }
+            },
+            ".card-wrapper": {
+              "background": "@wrapBgColor"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#086784",
+              "text-align": "left"
+            },
+            ".card-title, .card-box": {
+              "color": "#086784",
+              "text-align": "justify"
+            },
+            ".card-content-text": {
+              "@media (max-width: 767px)": {
+                "padding": "2rem 1.5rem",
+                "margin-bottom": "1rem"
+              },
+              "@media (min-width: 768px) and (max-width: 991px)": {
+                "padding": "2.25rem"
+              },
+              "@media (min-width: 992px)": {
+                "padding": "4rem"
+              }
+            }
+          },
+          "_name": "article01",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"start article01\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n\t\t<input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"4\" max=\"12\" step=\"1\" value=\"12\">\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n\t\t<input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n\t\t<input type=\"color\" title=\"Card Bg\" name=\"wrapBgColor\" value=\"#ffffff\">\n\t\t<header>Images</header>\n\t\t<input type=\"checkbox\" name=\"autoSize\" title=\"Auto Size\" checked>\n\t\t<input type=\"range\" name=\"imageHeight\" title=\"Height\" min=\"1\" max=\"5\" step=\"1\" value=\"4\" condition=\"autoSize\">\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" name=\"bg\" parallax>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n\t\t\t<input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n\t\t</fieldset>\n\t\t<header condition=\"bg.type === 'video'\">Fallback Image</header>\n\t\t<input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n\t</mbr-parameters>\n\n\t<div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t<div class=\"row justify-content-center\">\n\t\t\t<div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n\t\t\t\t<div class=\"card-wrapper\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"image-wrapper col-12 col-sm-6 justify-content-center\">\n\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/mbr-1-1256x837.png\" alt=\"Mobirise Website Builder\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"image-wrapper col-12 col-sm-6 justify-content-center\">\n\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/mbr-1256x704.jpg\" alt=\"Mobirise Website Builder\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"card-box align-left mb-3 card-content-text\">\n\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style mbr-white mb-0\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\">\n\t\t\t\t\t\t\t<b>AI ÇAĞINDA İNSAN BİLİNCİ</b></h4>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mt-3 mb-0\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Günümüzde yapay zekâ (AI) hayatımızın hemen her alanına girmiş durumda. Telefonlarımız, bilgisayarlarımız, sosyal medya ve hatta bazı işlerimiz artık AI tarafından destekleniyor. Peki, bu gelişmeler insan bilincini ve düşünme biçimimizi nasıl etkiliyor? “İnsan bilinci” ne demek ve AI bu bilince nasıl dokunuyor? Gelin, basit bir dille birlikte inceleyelim.<br><br><b>Bilinç Nedir?</b><br><br>Bilinç, aslında insanın kendi varlığının farkında olması, düşündüklerinin farkına varabilmesi ve hislerini yaşayabilmesidir. Mesela sıcak bir çikolata içtiğinizde hissettiğiniz keyif veya sevdiğiniz bir müziği dinlerken duyduğunuz mutluluk, bilincin bir parçasıdır. Filozof David Chalmers bu konuyu ikiye ayırır:<br><br><b>Kolay Problem:</b> Beynin nasıl çalıştığını ve davranışlarımızın nasıl ortaya çıktığını anlamak.<br><br><b>Zor Problem:</b> Beynimizin neden bu deneyimleri, yani duyguları ve hisleri hissettiğini açıklamak.<br><br>AI bugün bizim gibi düşünebiliyor gibi görünebilir ama bu zor problem açısından henüz bilinçli değildir. AI, sadece bize yanıt vermek için programlanmış karmaşık bir araçtır.<br><br><b>AI İnsan Beynini Nasıl Etkiliyor?</b><br><br>Büyük dil modelleri (örneğin Chat GPT), bilgiye hızlı erişim sağlar ve işimizi kolaylaştırır. Ancak araştırmalar, AI’ya fazla bağımlı olmanın beynimizin bazı düşünme yollarını zayıflatabileceğini gösteriyor. Buna “bilişsel borç” denir. Yani, AI bize yardımcı oldukça, beynimiz bazı işleri kendi başına yapmayı unutabilir.<br><br>Ama panik yapmaya gerek yok. AI’yı araç olarak kullanmak, yani kendi düşüncemizi üretip AI ile geliştirmek, beynimizi tembelleştirmek yerine güçlendirebilir. Önemli olan AI’yı bir kısayol değil, bir destek aracı olarak görmek.<br><br><b>Zihin Yükleme ve İnsan Kimliği</b><br><br>Bilim kurgu filmlerinde sıkça gördüğümüz “zihin yükleme” fikri, insan beyninin dijital bir ortama aktarılmasıdır. Ama burada kritik soru şudur: Eğer beynimizi dijital bir kopyaya aktarabilirsek, gerçekten biz olmaya devam eder miyiz?<br><br>Filozoflar iki yaklaşım önerir:<br><br><b>Psikolojik Süreklilik:</b> Hafıza, kişilik ve deneyimler korunursa, fiziksel beden olmasa bile kimliğimiz devam eder.<br><br><b>Biyolojik Süreklilik:</b> Kimlik, canlı bir bedenin devam etmesine bağlıdır.<br><br>AI çağında bile, kim olduğumuz ve ne hissettiğimiz hâlâ bizim kontrolümüzde.<br><br><b>AI Etiği ve Gelecek</b><br><br>AI bilinç kazanmasa da, biz insanlar için büyük etik sorular ortaya çıkarıyor. Örneğin:<br><br>AI doğru kararlar alabilir mi?<br><br>Algoritmalar bazı gruplara karşı önyargılı olabilir mi?<br><br>AI ve insanlar arasındaki sorumluluk nasıl paylaşılmalı?<br><br>Bu sorulara yanıt bulmak, sadece teknoloji değil, felsefe ve ahlak bilimiyle de ilgilidir. İnsanlık, AI’yı geliştirirken aynı zamanda kendi değerlerini ve sınırlarını da korumalıdır.<br><br><b>Sonuç</b><br><br>AI çağında bilinç, hem kendimizi hem de teknolojiyi anlamamızı gerektiriyor. Bilincimiz sadece düşünmek değil, hissetmek ve farkında olmaktır. AI bize hızlı bilgi sunabilir, işleri kolaylaştırabilir ama düşünmeyi, hissetmeyi ve karar vermeyi bırakmamalıyız. Bilinç, her zaman insanın en değerli hazinesi olarak kalacaktır.</p>\n\t\t\t\t\t\t<div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-3 mb-0\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n\t\t\t\t\t\t\t<a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Read More</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>",
+          "_cid": "v0kZlzSYU2",
+          "_anchor": "article01-2b",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "background-color": "@bgColor",
+            ".mbr-text": {
+              "color": "#0c2c68",
+              "text-align": "center"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#000000"
+            },
+            ".mbr-section-title": {
+              "color": "#385493",
+              "text-align": "center"
+            }
+          },
+          "_name": "article12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article12\" group=\"Article\">    \n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" value=\"12\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <header>Background</header>\n        <input type=\"color\" title=\"Color\" name=\"bgColor\" value=\"#ffffff\">\n    </mbr-parameters>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-md-12 col-lg-{{textWidth}}\">\n                <h3 class=\"mbr-section-title mbr-fonts-style mb-4 mt-0\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\"><b>Geleceğin Meslekleri: Türkiye Perspektifinde 2025 ve Ötesi</b></h3>\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">The storytelling magic of photos\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-7\"><b>Teknoloji Odaklı Roller</b><br><br>YZ ve veri teknolojileri, küresel ve Türkiye iş piyasasında en hızlı büyüyen alanlar arasında yer alıyor.<br><br><b>YZ ve Makine Öğrenimi Uzmanları</b>: Türkiye’de bankacılık ve üretim sektörlerinde algoritma ve otomasyon çözümleri geliştirecek uzmanlara ihtiyaç artıyor.<br><br><b>Veri Analistleri ve Büyük Veri Uzmanları:</b> Şirketlerin karar alma süreçlerinde veriye dayalı strateji oluşturması için kritik.<br><br><b>Siber Güvenlik Uzmanları: </b>Dijitalleşmenin hız kazanmasıyla Türkiye’de finans, e-ticaret ve kamu sektöründe yüksek talep görüyor.<br><br><b>FinTech ve Blockchain Uzmanları:</b> Türkiye’nin finansal teknolojiler ve dijital varlık alanında büyüyen ekosistemi için önemli.<br><br><br><b>Yeşil ve Sürdürülebilirlik Odaklı Roller</b><br><br>Türkiye’nin enerji ve çevre politikaları, yeşil dönüşümü hızlandırıyor.<br><br>Yenilenebilir Enerji Mühendisleri ve Sıfır Atık Danışmanları<br><br>ESG Uzmanları ve Döngüsel Ekonomi Danışmanları<br>Bu alanlar, hem devlet hem de özel sektör yatırımlarının artmasıyla öne çıkıyor.<br><br><b>İnsani ve Yeni Teknoloji Etkileşimli Roller</b><br><br>Teknolojinin hızla ilerlemesi, insan dokunuşunu gerektiren işleri değerli kılıyor:<br><br>YZ Etik Danışmanları: Şirketlerin yapay zekâyı etik ve şeffaf kullanmasını sağlıyor.<br><br>Hibrit Çalışma ve İnsan Kaynakları Uzmanları: Türkiye’de ofis ve uzaktan çalışma kültürünü dengeleyen yöneticilere ihtiyaç var.<br><br>Metaverse ve Dijital Varlık Tasarımcıları: Türkiye’de dijital içerik ve oyun sektöründe yeni fırsatlar yaratıyor.<br><br>Sağlık ve Sosyal Hizmet Profesyonelleri: Hemşirelik, danışmanlık ve bakım hizmetlerinde insani uzmanlık hâlâ vazgeçilmez.<br><br><b>Geleceğin Kritik Yetkinlikleri</b><br><br>Davranışsal Beceriler: Analitik düşünme, esneklik, yaratıcılık, iletişim ve sürekli öğrenme.<br><br>Teknik Beceriler: Prompt mühendisliği, makine öğrenmesi, no-code/low-code platform kullanımı, YZ ve büyük veri yönetimi.<br><br><b>YZ’nın Türkiye’de İşgücüne Etkisi</b><br><br>YZ, tekrarlayan işleri otomatikleştirirken, yaratıcı ve insana dayalı rolleri güvenceye alıyor. Türkiye’de büro asistanları ve veri girişi elemanları risk altındayken, YZ sistemlerini yöneten mühendisler, etik danışmanlar ve sürdürülebilirlik uzmanları için talep artıyor. PwC Türkiye verilerine göre, YZ entegrasyonu verimliliği yükseltirken, yeni iş alanları ve beceri geçişlerine olan ihtiyaç da artıyor.<br><br><b>Sonuç</b><br><br>2025 sonrası iş dünyasında başarı, ne bildiğinizden çok, nasıl öğrendiğiniz, nasıl adapte olduğunuz ve hangi becerileri geliştirdiğinizle belirlenecek. Türkiye, teknolojik altyapısı ve genç nüfusuyla bu dönüşümde hem üretici hem de stratejik bir konumda bulunuyor. Gelecek, sadece teknolojik değil; insan zekâsı, yaratıcılık ve etik değerlerle şekillenecek.</p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "v0lVCYHHcE",
+          "_anchor": "article12-2d",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    },
+    "page2.html": {
+      "settings": {
+        "title": "Page 2",
+        "order": "3"
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "overflow": "hidden"
+          },
+          "_name": "footer04",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"footer4\" group=\"Footers\" global once=\"footers\" mbr-class=\"{'mbr-reveal': reveal, 'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"checkbox\" title=\"Reveal effect\" name=\"reveal\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#2e481a\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"media-container-row align-center mbr-white\">\n            <div class=\"col-12\">\n                <p class=\"mbr-text mb-0 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".media-container-row .mbr-text\" data-app-placeholder=\"Type Text\">Site Tasarımı ve İçerik © Ada Nar | Digital Universe\n                </p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "v0kEcBHXJS",
+          "_anchor": "footer04-2e",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "footers",
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".content-text": {
+              "max-width": "800px"
+            }
+          },
+          "_name": "video02",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"video02\" group=\"Image & Video\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"PlayerVimeo\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" name=\"fullWidth\" title=\"Full Width\">\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"4\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n    <input type=\"range\" name=\"videoWidth\" title=\"Video\" min=\"4\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div mbr-video class=\"mbr-figure col-12 mb-5 col-md-{{videoWidth}}\">\n        <iframe src=\"https://www.youtube.com/embed/e_osRVRhE_s?rel=0&showinfo=0&autohide=1&loop=1&autoplay=1\"></iframe>\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 content-text\">\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\">\n          <b>Small business, big dreams.</b>\n        </h4>\n        <p class=\"mbr-description mbr-fonts-style mb-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n        Unleash your inner artist with our unique products.\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "v0qjMa9VXQ",
+          "_anchor": "video02-2j",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    },
+    "page3.html": {
+      "settings": {
+        "title": "Page 3",
+        "order": "2"
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "overflow": "hidden"
+          },
+          "_name": "footer04",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"footer4\" group=\"Footers\" global once=\"footers\" mbr-class=\"{'mbr-reveal': reveal, 'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"checkbox\" title=\"Reveal effect\" name=\"reveal\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#2e481a\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"media-container-row align-center mbr-white\">\n            <div class=\"col-12\">\n                <p class=\"mbr-text mb-0 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".media-container-row .mbr-text\" data-app-placeholder=\"Type Text\">Site Tasarımı ve İçerik © Ada Nar | Digital Universe\n                </p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "v0kEcBHXJS",
+          "_anchor": "footer04-2k",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "footers",
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".content-text": {
+              "max-width": "800px"
+            }
+          },
+          "_name": "video02",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"video02\" group=\"Image & Video\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"PlayerVimeo\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" name=\"fullWidth\" title=\"Full Width\">\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"10\">\n    <input type=\"range\" name=\"videoWidth\" title=\"Video\" min=\"4\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div mbr-video class=\"mbr-figure col-12 mb-5 col-md-{{videoWidth}}\">\n        <iframe src=\"https://www.youtube.com/embed/6Kp2ZFzUn4Q?rel=0&showinfo=0&autohide=1&loop=1&autoplay=1\"></iframe>\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 content-text\">\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\">\n          <b>Small business, big dreams.</b>\n        </h4>\n        <p class=\"mbr-description mbr-fonts-style mb-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n        Unleash your inner artist with our unique products.\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "v0qwEI53qd",
+          "_anchor": "video02-2l",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    },
+    "page4.html": {
+      "settings": {
+        "title": "Page 4",
+        "order": "1"
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "overflow": "hidden"
+          },
+          "_name": "footer04",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"footer4\" group=\"Footers\" global once=\"footers\" mbr-class=\"{'mbr-reveal': reveal, 'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"checkbox\" title=\"Reveal effect\" name=\"reveal\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#2e481a\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"media-container-row align-center mbr-white\">\n            <div class=\"col-12\">\n                <p class=\"mbr-text mb-0 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".media-container-row .mbr-text\" data-app-placeholder=\"Type Text\">Site Tasarımı ve İçerik © Ada Nar | Digital Universe\n                </p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "v0kEcBHXJS",
+          "_anchor": "footer04-2m",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "footers",
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".content-text": {
+              "max-width": "800px"
+            }
+          },
+          "_name": "video02",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"video02\" group=\"Image & Video\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"PlayerVimeo\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" name=\"fullWidth\" title=\"Full Width\" checked>\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n    <input type=\"range\" name=\"videoWidth\" title=\"Video\" min=\"4\" max=\"12\" step=\"1\" value=\"9\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div mbr-video class=\"mbr-figure col-12 mb-5 col-md-{{videoWidth}}\">\n        <iframe src=\"https://www.youtube.com/embed/wb4C9t__8VA?loop=1&autoplay=1\"></iframe>\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 content-text\">\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\">\n          <b>Small business, big dreams.</b>\n        </h4>\n        <p class=\"mbr-description mbr-fonts-style mb-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n        Unleash your inner artist with our unique products.\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "v0qF6vjX3o",
+          "_anchor": "video02-2n",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    },
+    "html.html": {
+      "settings": {
+        "main": true,
+        "title": "",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "display": "flex",
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)",
+              ".mbr-overlay": {
+                "background-color": "@overlayColor",
+                "opacity": "@overlayOpacity"
+              }
+            },
+            "@media (min-width: 768px)": {
+              "align-items": "~\"@{verticalAlign}\"",
+              ".row": {
+                "justify-content": "~\"@{horizontalAlign}\""
+              },
+              ".content-wrap": {
+                "padding": "1rem 3rem"
+              }
+            },
+            "@media (max-width: 991px) and (min-width: 768px)": {
+              ".content-wrap": {
+                "min-width": "50%"
+              }
+            },
+            "@media (max-width: 767px)": {
+              "-webkit-align-items": "center",
+              "align-items": "~\"@{verticalAlign}\"",
+              ".mbr-row": {
+                "-webkit-justify-content": "center",
+                "justify-content": "center"
+              },
+              ".content-wrap": {
+                "width": "100%"
+              }
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = \"video\")": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".mbr-section-title, .mbr-section-subtitle": {
+              "text-align": "left",
+              "color": "#ffc091"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "center",
+              "color": "#ffc091"
+            },
+            ".mbr-section-title": {
+              "text-align": "center"
+            }
+          },
+          "_name": "header18",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header18\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen, 'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"24\" step=\"1\" value=\"24\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"3\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show / Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <select title=\"Vertical Align\" name=\"verticalAlign\" condition=\"fullScreen\">\n      <option value=\"flex-start\">Top</option>\n      <option value=\"center\">Center</option>\n      <option value=\"flex-end\" selected>Bottom</option>\n    </select>\n    <select title=\"Horizontal Align\" name=\"horizontalAlign\">\n      <option value=\"flex-start\" selected>Left</option>\n      <option value=\"center\">Center</option>\n      <option value=\"flex-end\">Right</option>\n    </select>\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background17.jpg\" parallax>\n      <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=2Gg6Seob5Mg\" selected>\n      <input type=\"color\" title=\"Color\" value=\"#260a30\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"bg.type!='color' && overlay\">\n    <input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"bg.type!='color' && overlay\">\n  </mbr-parameters>\n\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row\">\n      <div class=\"content-wrap col-12 col-md-{{contentWidth}}\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mbr-white mb-4\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\">\n          <b><br>DIGITAL UNIVERSE</b></h1>\n        <h2 class=\"mbr-section-subtitle mbr-fonts-style mbr-white mb-4\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-2\" mbr-if=\"showSubtitle\">\n          Header Subtitle\n        </h2>\n        <p class=\"mbr-fonts-style mbr-text mbr-white mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Profesyonel, Vizyoner, İlham Veren Dijital Kimlik Sitesi<br><br></p>\n        <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-white-outline\" href=\"https://mobiri.se\" data-app-placeholder=\"Metin Yaz\">html.html</a></div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "v0geFNMFNe",
+          "_anchor": "header18-1v",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)",
+              "& when (@overlay)": {
+                ".mbr-overlay": {
+                  "background": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            ".item-subtitle": {
+              "line-height": "1.2",
+              "color": "#232323",
+              "text-align": "center"
+            },
+            "img, .item-img": {
+              "width": "100%",
+              "& when (@autoSize)": {
+                "height": "100%",
+                "object-fit": "cover",
+                "& when (@showCardTitle)": {
+                  "height": "(@imageHeight * 100px)",
+                  "object-fit": "cover"
+                },
+                "& when (@showText)": {
+                  "height": "(@imageHeight * 100px)",
+                  "object-fit": "cover"
+                },
+                "& when (@showButtons)": {
+                  "height": "(@imageHeight * 100px)",
+                  "object-fit": "cover"
+                }
+              }
+            },
+            ".item:focus, span:focus": {
+              "outline": "none"
+            },
+            ".item": {
+              "margin-bottom": "2rem",
+              "@media (max-width: 767px)": {
+                "margin-bottom": "1rem"
+              }
+            },
+            "& when not (@spacing)": {
+              ".row": {
+                "margin-left": "0",
+                "margin-right": "0"
+              },
+              ".item": {
+                "padding": "0",
+                "margin": "0"
+              }
+            },
+            ".item-wrapper": {
+              "position": "relative",
+              "border-radius": "4px",
+              "height": "100%",
+              "display": "flex",
+              "flex-flow": "column nowrap"
+            },
+            ".mbr-section-title": {
+              "color": "#000000",
+              "text-align": "center"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#232323",
+              "text-align": "center"
+            },
+            ".item-title": {
+              "color": "#232323",
+              "text-align": "center"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            }
+          },
+          "_name": "features03",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features03\" group=\"Features\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n\t\t<select title=\"Columns\" name=\"cardsWidth\">\n\t\t\t<option value=\"12\">1</option>\n\t\t\t<option value=\"6\">2</option>\n\t\t\t<option value=\"4\" selected>3</option>\n\t\t\t<option value=\"3\">4</option>\n\t\t</select>\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" name=\"showTitle\" title=\"Title\" checked>\n\t\t<input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\">\n\t\t<header>Cards</header>\n\t\t<input type=\"checkbox\" name=\"autoSize\" title=\"Auto Size\" checked>\n\t\t<input type=\"range\" name=\"imageHeight\" title=\"Height\" min=\"1\" max=\"5\" step=\"1\" value=\"5\" condition=\"autoSize\"><input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked>\n\t\t<input type=\"checkbox\" name=\"showCardTitle\" title=\"Title\" checked>\n\t\t<input type=\"checkbox\" name=\"showText\" title=\"Text\" checked>\n\t\t<input type=\"checkbox\" name=\"showButtons\" title=\"Buttons\" checked>\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" parallax name=\"bg\" required>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n\t\t</fieldset>\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#edefeb\" condition=\"overlay && bg.type == 'image'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type == 'image'\">\n\t</mbr-parameters>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t<div class=\"row justify-content-center mb-5\">\n\t\t\t<div class=\"col-12 content-head\">\n\t\t\t\t<div class=\"mbr-section-head\" mbr-if=\"showTitle || showSubtitle\">\n\t\t\t\t\t<h4 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><b>VİZYON VE YAKLAŞIM</b></h4>\n\t\t\t\t\t<h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mt-4 mb-0\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\"></h5>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}} active\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img mb-3\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/mbr-1139x638.jpg\" alt=\"Mobirise Website Builder\" title>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content align-left\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style mt-0 mb-2\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>Yapay Zeka&amp;Eğitim</b></h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mb-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">Yapay zekâ yalnızca bir teknoloji değil, insan yaratıcılığını genişleten bir araç, bilincin yeni dilidir.</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"page2.html\" class=\"btn item-btn btn-info-outline\" data-app-placeholder=\"Metin Yaz\">Akıllı Öğrenmeye Başla</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img mb-3\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/mbr-1139x879.png\" alt=\"Mobirise Website Builder\" title data-slide-to=\"1\" data-bs-slide-to=\"1\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content align-left\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style mb-2 mt-0\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>İçerik Tasarımı&amp;Yaratıcılık</b></h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mb-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">Tasarım, bilincin dışa vurumudur. Yaratıcılık ve içerik üretimi, teknolojinin ötesinde insan zihninin evrimini yansıtır.<br>\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"page3.html\" class=\"btn item-btn btn-success-outline\" data-app-placeholder=\"Metin Yaz\">İlham Al ve Üret</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img mb-3\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/mbr-1-1139x1139.png\" alt=\"Mobirise Website Builder\" title data-slide-to=\"2\" data-bs-slide-to=\"2\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content align-left\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style mb-2 mt-0\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>Kozmik Bilinç&amp;İnsan Zihni</b></h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mb-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">Zihin ve evren aynı matematiksel düzenin yansımalarıdır. Gözlem, veri ve sembol; hepsi bilincin farklı dilleridir.<br>\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"page4.html\" class=\"btn item-btn btn-success-outline\" data-app-placeholder=\"Metin Yaz\">Gökyüzünü Keşfet</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>",
+          "_cid": "v0goV1NoDK",
+          "_anchor": "features03-1x",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".card-wrapper": {
+              "border-radius": "4px",
+              "@media (max-width: 767px)": {
+                "padding": "1.5rem",
+                "padding-top": "(@contentPaddingTop * 1.5rem)",
+                "padding-bottom": "(@contentPaddingBottom * 1.5rem)"
+              },
+              "@media (min-width: 768px) and (max-width: 991px)": {
+                "padding": "2.25rem",
+                "padding-top": "(@contentPaddingTop * 3rem)",
+                "padding-bottom": "(@contentPaddingBottom * 3rem)"
+              },
+              "@media (min-width: 992px)": {
+                "padding": "4rem",
+                "padding-top": "(@contentPaddingTop * 3rem)",
+                "padding-bottom": "(@contentPaddingBottom * 3rem)"
+              }
+            },
+            ".wrap": {
+              "background": "url(@wrapBgImage)",
+              "background-repeat": "no-repeat",
+              "background-position": "center",
+              "background-size": "cover",
+              ".inner-wrap": {
+                "padding": "40px"
+              }
+            },
+            ".card-title": {
+              "color": "#ffffff",
+              "text-align": "center"
+            },
+            ".mbr-text": {
+              "color": "#000000"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#edefeb",
+              "text-align": "right"
+            }
+          },
+          "_name": "image07",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image07\" group=\"Image & Video\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{  'mbr-fullscreen': fullScreen,  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Width\" name=\"cardWidth\" min=\"6\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Caption\" name=\"showDescription\">\n\n    <header>Image</header>\n    <input type=\"image\" name=\"wrapBgImage\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1920x1072.jpg\">\n    <input type=\"range\" inline title=\"Top\" name=\"contentPaddingTop\" min=\"1\" max=\"10\" step=\"1\" value=\"10\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"contentPaddingBottom\" min=\"1\" max=\"10\" step=\"1\" value=\"5\">\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-12 col-lg-{{cardWidth}}\">\n        <div class=\"card-wrapper wrap\">\n          <div class=\"card-box align-center\">\n           <h1 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title\"></h1>\n            <p class=\"mbr-text mbr-fonts-style mt-4 mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n              Her proje, içsel bir keşfin dijital yansımasıdır</p>\n            <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n              <a class=\"btn btn-danger\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Shop now</a></div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div mbr-if=\"showDescription\">\n      <p class=\"mbr-description mt-4 align-center mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-description\">Her proje, içsel bir keşfin dijital yansımasıdır</p>\n    </div>\n  </div>\n</section>",
+          "_cid": "v0kuKkbjNz",
+          "_anchor": "image07-26",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".mbr-section-subtitle": {
+              "text-align": "center"
+            }
+          },
+          "_name": "article11",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article11\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n       <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" step=\"1\" value=\"7\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">        \n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\">\n    </div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"title col-md-12 col-lg-{{textWidth}}\">\n                <h3 class=\"mbr-section-title mbr-fonts-style align-center mt-0 mb-0\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\"><b>&nbsp;</b></h3>\n                <h4 class=\"mbr-section-subtitle align-center mbr-fonts-style mt-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">En yeni içeriklerimizi görmek ve makalelerimizi okumak için tıklayın</h4>\n                <div class=\"mbr-section-btn align-center mt-4\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-black\" href=\"B.html\" data-app-placeholder=\"Metin Yaz\">BLOG</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "v0hD9itS7f",
+          "_anchor": "article11-24",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".item-wrapper img": {
+              "width": "80px",
+              "height": "80px",
+              "object-fit": "cover",
+              "border-radius": "50% !important"
+            },
+            ".item-wrapper": {
+              "margin-bottom": "2rem"
+            },
+            ".card-title, .iconfont-wrapper": {
+              "color": "#000000"
+            },
+            ".card-text": {
+              "color": "#000000",
+              "text-align": "center"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#000000"
+            },
+            ".card-title, .img-wrapper": {
+              "text-align": "center"
+            },
+            ".img-wrapper": {
+              "display": "flex",
+              "justify-content": "center"
+            }
+          },
+          "_name": "people05",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"people05\" group=\"People\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showMainTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Subtitle\" name=\"showMainSubtitle\">\n\t\t<header>Card</header>\n\t\t<select title=\"Columns\" name=\"columns\">\n\t\t\t<option value=\"12\">1</option>\n\t\t\t<option value=\"6\">2</option>\n\t\t\t<option value=\"4\" selected>3</option>\n\t\t\t<option value=\"3\">4</option>\n\t\t</select>\n\t\t<input type=\"checkbox\" title=\"Name\" name=\"showTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Image\" name=\"showImage\">\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" name=\"bg\" parallax>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n\t\t</fieldset>\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n\t</mbr-parameters>\n\n\t<div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t<div class=\"row mb-5 justify-content-center\" mbr-if=\"showMainTitle || showMainSubtitle\">\n\t\t\t<div class=\"col-12 mb-0 content-head\">\n\t\t\t\t<h3 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-7\" mbr-if=\"showMainTitle\" data-app-selector=\".mbr-section-title\"><b>KAYNAKLAR</b></h3>\n\t\t\t\t<h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showMainSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n\t\t\t\t\tList your customers' testimonials in this block.\n\t\t\t\t</h5>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"item features-without-image col-12 col-md-6 col-lg-{{columns}} active\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-box align-left\">\n\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".card-text\">\n\t\t\t\t\t\t\tI can't express how much I adore the unique clothing pieces from this small creative\n\t\t\t\t\t\t\tbusiness. Each piece has its own character and charm. I feel like I'm wearing a work of art!\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"img-wrapper mt-4 mb-2\" mbr-if=\"showImage\">\n\t\t\t\t\t\t\t<img src=\"../_images/people/team1.jpg\" alt data-slide-to=\"0\" data-bs-slide-to=\"0\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .img-wrapper\"><b>Acun Medya Akademi</b></h5>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"item features-without-image col-12 col-md-6 col-lg-{{columns}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-box align-left\">\n\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".card-text\">\n\t\t\t\t\t\t\tI've never received so many compliments on my outfits before I started wearing these\n\t\t\t\t\t\t\tcreations. The quality and attention to detail are truly impressive. Thank you for making me\n\t\t\t\t\t\t\tfeel stylish!\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"img-wrapper mt-4 mb-2\" mbr-if=\"showImage\">\n\t\t\t\t\t\t\t<img src=\"../_images/people/team5.jpg\" data-slide-to=\"1\" data-bs-slide-to=\"1\" alt>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .img-wrapper\"><b>Afgan Rasulov</b></h5>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t</div>\n\t</div>\n</section>",
+          "_cid": "v0rxYzRNmh",
+          "_anchor": "people05-2z",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "overflow": "hidden"
+          },
+          "_name": "footer04",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"footer4\" group=\"Footers\" global once=\"footers\" mbr-class=\"{'mbr-reveal': reveal, 'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"checkbox\" title=\"Reveal effect\" name=\"reveal\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#2e481a\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"media-container-row align-center mbr-white\">\n            <div class=\"col-12\">\n                <p class=\"mbr-text mb-0 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".media-container-row .mbr-text\" data-app-placeholder=\"Type Text\">Site Tasarımı ve İçerik © Ada Nar | Digital Universe\n                </p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "v0kEcBHXJS",
+          "_anchor": "footer04-27",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "footers",
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
